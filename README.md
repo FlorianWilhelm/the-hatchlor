@@ -4,7 +4,7 @@ The Hatchlor is a [cookiecutter] template featuring the modern and extensible Py
 
 ## ✨ Features
 
-This template integrates the following features:
+The Hatchlor integrates the following features:
 
 * [hatch]: Python packaging, environment management and test runner ([tox] replacement),
 * [hatch-vcs]: determine the package version automatically from git tags, e.g. `v0.9`,
@@ -16,6 +16,7 @@ This template integrates the following features:
 * [mkdocs]: a fast, simple and downright gorgeous static site generator,
 * [pre-commit]: pre-commit git hooks that make your life easier,
 * [Markdown]: instead of reStructuredText, Markdown is used consistently for all text files,
+* [EditorConfig]: maintain consistent coding styles for multiple developers,
 * [src-layout]: the actual Python package is kept under a `src` folder avoiding many common errors.
 
 ## 💫 Quickstart
@@ -32,7 +33,7 @@ Then generate your Python project with:
 cookiecutter https://github.com/florianwilhelm/hatchlor.git
 ```
 
-That's  it! 🎉 Now change into the created directory and checkout the `README.md` for more.
+🎉 That's  it! You can now change into the created directory and check out `README.md` for more.
 
 ## 🪪 License
 
@@ -59,3 +60,4 @@ To start this project off a lot of inspiration and code was taken from [cookiecu
 [mypy]: https://mypy-lang.org/
 [black]: https://github.com/psf/black
 [ruff]: https://beta.ruff.rs/
+[EditorConfig]: http://editorconfig.org
