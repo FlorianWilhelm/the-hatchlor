@@ -15,5 +15,6 @@ cd $PROJ_DIR
 
 hatch run cov
 hatch run lint:all
+hatch run docs:build
 
 

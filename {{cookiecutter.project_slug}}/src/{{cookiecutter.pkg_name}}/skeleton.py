@@ -36,15 +36,8 @@ class LogLevel(str, enum.Enum):
     DEBUG = 'debug'
 
 
-def fib(n: int):
-    """Fibonacci example function
-
-    Args:
-      n (int): integer
-
-    Returns:
-      int: n-th Fibonacci number
-    """
+def fib(n: int) -> int:
+    """Fibonacci example function"""
     if not n > 0:
         msg = f'{n} must be larger than 0!'
         raise RuntimeError(msg)
@@ -55,11 +48,7 @@ def fib(n: int):
 
 
 def setup_logging(log_level: LogLevel):
-    """Setup basic logging
-
-    Args:
-      loglevel (int): minimum loglevel for emitting messages
-    """
+    """Setup basic logging"""
     log_format = '[%(asctime)s] %(levelname)s:%(name)s:%(message)s'
     numeric_level = getattr(logging, log_level.upper(), None)
     logging.basicConfig(level=numeric_level, stream=sys.stdout, format=log_format, datefmt='%Y-%m-%d %H:%M:%S')
