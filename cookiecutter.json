@@ -1,0 +1,26 @@
+{ 
+  "full_name": "Florian Wilhelm",
+  "email": "email@example.com",
+  "project_name": "Python hatch project",
+  "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
+  "pkg_name": "{{ cookiecutter.project_slug.replace('-', '_') }}",
+  "project_short_description": "Python project featuring the modern and extensible Python project manager hatch.",
+  "open_source_license": ["MIT", "BSD-3-Clause", "ISC", "Apache-2.0", "GPL-3.0-only", "proprietary"],
+  "target_python_version": ["py310", "py38", "py39", "py311"],
+  "github_username": "{{ cookiecutter.full_name.replace(' ', '')}}",
+  "project_repo": "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}",
+  "pypi_username": "{{ cookiecutter.github_username }}",  
+  "__prompts__": {
+    "full_name": "Provide your [bold yellow]full name[/]",
+    "email": "Provide your [bold yellow]email[/]",
+    "target_python_version": "Provide the [bold yellow]minimum Python version[/]",
+    "project_name": "Provide the [bold yellow]human-readible project name[/]",
+    "project_slug": "Provide the [bold yellow]project slug[/] (only ASCII letters/digits, underscores, hyphens, and periods)",
+    "pkg_name": "Provide the [bold yellow]package name[/] (only ASCII letters/digits, and underscores)",
+    "project_repo": "Optionally, provide the [bold yellow]repository url[/]",
+    "project_short_description": "Provide a [bold yellow]short project description[/]",
+    "open_source_license": "Provide the [bold yellow]license[/] of this project",
+    "pypi_username": "Optionally, provide a [bold yellow]PyPI user name[/]",
+    "github_username":"Optionally, provide a [bold yellow]Github user name[/]"
+  }
+}
