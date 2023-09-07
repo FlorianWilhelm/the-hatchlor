@@ -30,7 +30,7 @@ pip install -U cookiecutter
 Then generate your Python project with:
 
 ```console
-cookiecutter https://github.com/florianwilhelm/hatchlor.git
+cookiecutter https://github.com/florianwilhelm/the-hatchlor.git
 ```
 
 🎉 That's  it! You can now change into the created directory and check out `README.md` for more.
