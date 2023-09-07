@@ -58,6 +58,6 @@ To start this project off a lot of inspiration and code was taken from [cookiecu
 [pytest]: https://docs.pytest.org/
 [coverage]: https://coverage.readthedocs.io/
 [mypy]: https://mypy-lang.org/
-[black]: https://github.com/psf/black
+[black]: https://black.readthedocs.io/
 [ruff]: https://beta.ruff.rs/
 [EditorConfig]: http://editorconfig.org
