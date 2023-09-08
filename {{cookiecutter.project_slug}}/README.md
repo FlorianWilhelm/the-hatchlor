@@ -26,3 +26,4 @@ This package was created with [Cookiecutter] and [The Hatchlor] project template
 [Cookiecutter]: https://cookiecutter.readthedocs.io/
 [The Hatchlor]: https://github.com/florianwilhelm/the-hatchlor
 [pipx]: https://pypa.github.io/pipx/
+[hatch]: https://hatch.pypa.io/
