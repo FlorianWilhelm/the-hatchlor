@@ -19,6 +19,11 @@ The Hatchlor integrates the following features:
 * [EditorConfig]: maintain consistent coding styles for multiple developers,
 * [src-layout]: the actual Python package is kept under a `src` folder avoiding many common errors.
 
+The template includes a `skeleton.py` with a simple function `fib` that calculates the Fibonacci numbers
+as demonstration. This is tested with `tests/test_skeleton.py` to demonstrate the corresponding features
+from above. As an additional tidbit, `skeleton.py` also features [Typer] to show how `fib` can be
+exposed as a CLI command.
+
 ## 💫 Quickstart
 
 Install the latest [cookiecutter], i.e. >= 1.4, if not installed:
@@ -61,3 +66,4 @@ To start this project off a lot of inspiration was taken from [cookiecutter-pypa
 [black]: https://black.readthedocs.io/
 [ruff]: https://beta.ruff.rs/
 [EditorConfig]: http://editorconfig.org/
+[Typer]: https://typer.tiangolo.com/
