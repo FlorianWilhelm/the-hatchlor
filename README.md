@@ -22,7 +22,7 @@ The Hatchlor integrates the following features:
 The template includes a `skeleton.py` with a simple function `fib` that calculates the Fibonacci numbers
 as demonstration. This is tested with `tests/test_skeleton.py` to demonstrate the corresponding features
 from above. As an additional tidbit, `skeleton.py` also features [Typer] to show how `fib` can be
-exposed as a CLI command.
+exposed as a CLI command. These files are only for demonstration and can be safely deleted.
 
 ## 💫 Quickstart
 
