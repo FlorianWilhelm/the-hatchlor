@@ -11,7 +11,7 @@
 After having cloned this repository:
 
 1. install [hatch] globally with [pipx], i.e. `pipx install hatch`,
-2. \[only once\] isntall `pre-commit` globall with `pipx install pre-commit`
+2. \[only once\] install `pre-commit` globall with `pipx install pre-commit`
 3. \[only once\] run `pre-commit install` to install [pre-commit],
 
 and then you are already set up to start hacking. Use `hatch run cov` or `hatch run no-cov` to run

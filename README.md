@@ -60,4 +60,4 @@ To start this project off a lot of inspiration was taken from [cookiecutter-pypa
 [mypy]: https://mypy-lang.org/
 [black]: https://black.readthedocs.io/
 [ruff]: https://beta.ruff.rs/
-[EditorConfig]: http://editorconfig.org
+[EditorConfig]: http://editorconfig.org/
