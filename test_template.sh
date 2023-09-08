@@ -13,7 +13,14 @@ cookiecutter --no-input hatchlor
 
 cd $PROJ_DIR
 
+hatch env prune
+
+hatch build
+hatch clean
+hatch version
+
 hatch run fibonacci 10
 hatch run cov
 hatch run lint:all
 hatch run docs:build
+

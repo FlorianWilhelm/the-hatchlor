@@ -41,7 +41,7 @@ The Hatchlor is distributed under the terms of the [MIT license](LICENSE.txt).
 
 ## 🙏 Credits
 
-To start this project off a lot of inspiration and code was taken from [cookiecutter-pypackage] and [Pyscaffold].
+To start this project off a lot of inspiration was taken from [cookiecutter-pypackage] and [Pyscaffold].
 
 [cookiecutter]: https://cookiecutter.readthedocs.io/
 [tox]: https://tox.wiki/

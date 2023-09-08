@@ -10,7 +10,7 @@ build-backend = "hatchling.build"
 name = "{{ cookiecutter.project_slug }}"
 description = "{{ cookiecutter.project_short_description }}"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">={{ cookiecutter.target_python_version }}"
 # use license identifier from https://spdx.org/licenses/
 license = "{{ cookiecutter.open_source_license }}"
 # keywords for easier look-up on PyPI
@@ -81,7 +81,7 @@ warn_unused_ignores = true
 include = '\.pyi?$'
 line-length = 120
 skip-string-normalization = true
-target-version = ["{{ cookiecutter.target_python_version }}"] # ToDo: Modify according to your needs!
+target-version = ["{{ 'py' ~ cookiecutter.target_python_version.replace('.', '') }}"] # ToDo: Modify according to your needs!
 
 [tool.pytest.ini_options]
 minversion = "6.0"
@@ -125,7 +125,7 @@ exclude_lines = [
 ]
 
 [tool.ruff]
-target-version = "{{ cookiecutter.target_python_version }}" # ToDo: Modify according to your needs!
+target-version = "{{ 'py' ~ cookiecutter.target_python_version.replace('.', '') }}" # ToDo: Modify according to your needs!
 line-length = 120
 include = ["src/**/*.py", "src/**/*.pyi", "**/pyproject.toml"]
 select = [
