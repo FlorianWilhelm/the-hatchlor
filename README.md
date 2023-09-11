@@ -8,6 +8,7 @@ The Hatchlor integrates the following features:
 
 * [hatch]: Python packaging, environment management and test runner ([tox] replacement),
 * [hatch-vcs]: determine the package version automatically from git tags, e.g. `v0.9`,
+* [pyproject.toml]: all package, build and tool configuration in one file,
 * [pytest]: full-featured Python testing tool that helps you write better programs,
 * [coverage]: tool for measuring code coverage of Python programs with pytest integration,
 * [ruff]: extremely fast Python linter, which replaces [isort], [flake8], etc.,
@@ -67,3 +68,4 @@ To start this project off a lot of inspiration was taken from [cookiecutter-pypa
 [ruff]: https://beta.ruff.rs/
 [EditorConfig]: http://editorconfig.org/
 [Typer]: https://typer.tiangolo.com/
+[pyproject.toml]: https://hatch.pypa.io/latest/config/metadata/
