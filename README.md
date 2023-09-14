@@ -1,7 +1,7 @@
 # 🌹 The Hatchlor 🌹 Cookiecutter Template
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/FlorianWilhelm/the-hatchlor/master/images/logo.svg" alt="The Hatchlor logo" width="400" role="img">
+<img src="https://raw.githubusercontent.com/FlorianWilhelm/the-hatchlor/master/images/logo.svg" alt="The Hatchlor logo" width="300" role="img">
 </div>
 
 The Hatchlor is a [cookiecutter] template featuring the modern and extensible Python project manager [hatch] 🐣.
