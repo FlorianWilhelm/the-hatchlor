@@ -1,6 +1,11 @@
 # 🌹 The Hatchlor 🌹 Cookiecutter Template
 
+<div align="center">
+
+<img src="https://raw.githubusercontent.com/FlorianWilhelm/the-hatchlor/master/images/logo.svg" alt="The Hatchlor logo" width="500" role="img">
 The Hatchlor is a [cookiecutter] template featuring the modern and extensible Python project manager [hatch] 🐣.
+
+</div>
 
 ## ✨ Features
 
@@ -47,7 +52,7 @@ The Hatchlor is distributed under the terms of the [MIT license](LICENSE.txt).
 
 ## 🙏 Credits
 
-To start this project off a lot of inspiration was taken from [cookiecutter-pypackage] and [Pyscaffold].
+To start this project off a lot of inspiration was taken from [hatch], [cookiecutter-pypackage] and [Pyscaffold].
 
 [cookiecutter]: https://cookiecutter.readthedocs.io/
 [tox]: https://tox.wiki/
