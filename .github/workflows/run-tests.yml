@@ -16,7 +16,7 @@ jobs:
       uses: mamba-org/setup-micromamba@v1
       with:
           micromamba-version: 'latest'
-          environment-file: test_environment.yml
+          environment-file: environment.yml
           init-shell: >-
             bash
             powershell
