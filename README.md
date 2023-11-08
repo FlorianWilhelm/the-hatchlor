@@ -93,7 +93,7 @@ To start this project off a lot of inspiration was taken from [hatch], [cookiecu
 
 [Tests-image]: https://github.com/FlorianWilhelm/the-hatchlor/actions/workflows/run-tests.yml/badge.svg?branch=main
 [Tests-link]: https://github.com/FlorianWilhelm/the-hatchlor/actions/workflows/run-tests.yml
-[hatch-image]: https://img.shields.io/badge/%F0%9F%A5%9A-Hatch-4051b5.svg
+[hatch-image]: https://img.shields.io/badge/%F0%9F%A5%9A-hatch-4051b5.svg
 [hatch-link]: https://github.com/pypa/hatch
 [ruff-image]: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/charliermarsh/ruff/main/assets/badge/v0.json
 [ruff-link]: https://github.com/charliermarsh/ruff
