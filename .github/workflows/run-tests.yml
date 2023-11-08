@@ -15,7 +15,7 @@ jobs:
     - name: Setup Python environment
       uses: mamba-org/setup-micromamba@v1
       with:
-          micromamba-version: '1.5.3'
+          micromamba-version: 'latest'
           environment-file: test_environment.yml
           init-shell: >-
             bash
