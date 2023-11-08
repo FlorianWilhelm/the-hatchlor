@@ -1,5 +1,3 @@
-# Only used for our Github CI/CD workflow, completely unrelated to hatch or the hatchlor.
-
 name: test-env
 channels:
   - conda-forge
