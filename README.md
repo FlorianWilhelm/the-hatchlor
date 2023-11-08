@@ -55,7 +55,7 @@ Then generate your Python project with:
 cookiecutter https://github.com/florianwilhelm/the-hatchlor.git
 ```
 
-🎉 That's  it! Now change into the created directory and [check out the `README.md`] for more information on how to use hatch.
+🎉 That's  it! Now change into the created directory and check out [`README.md`] for more information on how to use hatch.
 
 ## 🪪 License
 
@@ -90,7 +90,7 @@ To start this project off a lot of inspiration was taken from [hatch], [cookiecu
 [conda]: https://docs.conda.io/
 [virtualenv]: https://virtualenv.pypa.io/
 [demonstration of a Python project]: https://github.com/FlorianWilhelm/the-hatchlor-demo
-[check out the `README.md`]: https://github.com/FlorianWilhelm/the-hatchlor-demo
+[`README.md`]: https://github.com/FlorianWilhelm/the-hatchlor-demo
 
 [Tests-image]: https://github.com/FlorianWilhelm/the-hatchlor/actions/workflows/run-tests.yml/badge.svg?branch=main
 [Tests-link]: https://github.com/FlorianWilhelm/the-hatchlor/actions/workflows/run-tests.yml
