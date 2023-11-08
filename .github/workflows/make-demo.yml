@@ -57,4 +57,4 @@ jobs:
         destination-repository-name: "the-hatchlor-demo"
         user-email: florian.wilhelm@gmail.com
         commit-message: "Initial commit"
-        target-branch: master
+        target-branch: main
