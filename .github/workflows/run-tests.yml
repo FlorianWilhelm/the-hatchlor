@@ -38,6 +38,7 @@ jobs:
       shell: bash -el {0}
 
     - name: Test some hatch commands
+      working-directory: ./python-hatch-project
       run: |
         hatch run fibonacci 10
         hatch run cov
