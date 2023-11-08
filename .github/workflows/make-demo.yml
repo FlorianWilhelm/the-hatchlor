@@ -44,6 +44,10 @@ jobs:
         hatch run lint:all
         hatch run pre-commit run --all-files
 
+    - name: Remove git repo for next step
+      working-directory: ./python-hatch-project
+      run: rm -rf .git
+
     - name: Push to the-hatchlor-demo
       uses: cpina/github-action-push-to-another-repository@devel
       env:

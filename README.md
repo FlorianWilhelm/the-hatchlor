@@ -17,7 +17,7 @@ direct [virtualenv] usage. Just think of hatch as a tool that allows you to easi
 e.g. virtual but also docker environments, and helps you to manage them. A bit like what [tox] does for testing environments but
 for all kinds of environments, e.g. testing, linting your code, buildings your docs, and whatever you want.
 
-Check out a [demonstration of a Python project] created with The Hatchlor.
+Check out a [demonstration of a Python project] created by the Hatchlor.
 
 ## ✨ Features
 
