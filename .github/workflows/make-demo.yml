@@ -49,9 +49,10 @@ jobs:
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
-        source-directory: "python-hatch-project"
+        source-directory: "python-hatch-project/"
         destination-github-username: "FlorianWilhelm"
         destination-repository-username: "FlorianWilhelm"
         destination-repository-name: "the-hatchlor-demo"
         user-email: florian.wilhelm@gmail.com
+        commit-message: "Initial commit"
         target-branch: main
