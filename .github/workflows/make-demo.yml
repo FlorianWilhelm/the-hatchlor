@@ -1,0 +1,59 @@
+# This workflows will create a new demo repository using The Hatchlor for demonstration purposes
+
+name: Make Demo Repo
+
+on:
+  workflow_dispatch:
+
+jobs:
+  make-demo:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -l {0}
+    steps:
+    - name: Checkout Repo
+      uses: actions/checkout@v3
+      with:
+        path: ./hatchlor-template
+    - name: Setup Python environment
+      uses: mamba-org/setup-micromamba@v1
+      with:
+          micromamba-version: '1.3.1-0'
+          environment-file: test_environment.yml
+          init-shell: >-
+            bash
+            powershell
+          cache-environment: true
+          post-cleanup: 'all'
+    # - name: Set up Python
+    #   uses: actions/setup-python@v4
+    #   with:
+    #     python-version: "3.10"
+    - name: Setup git
+      working-directory: ./repo # to avoid nested git problem
+      run: |
+        git config --global user.email "github.action@example.com"
+        git config --global user.name "Github Action"
+    - name: Run cookiecutter
+      run: cookiecutter --no-input ./hatchlor-template
+      shell: bash -el {0}
+    - name: Run some hatch commands
+      run: |
+        hatch run fibonacci 10
+        hatch run cov
+        hatch run lint:all
+        hatch run pre-commit run --all-files
+      shell: bash -el {0}
+    - name: Push to the-hatchlor-demo
+      uses: cpina/github-action-push-to-another-repository@devel
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      with:
+        source-directory: "python-hatch-project"
+        destination-github-username: "FlorianWilhelm"
+        destination-repository-username: "FlorianWilhelm"
+        destination-repository-name: "the-hatchlor-demo"
+        user-email: florian.wilhelm@gmail.com
+        commit-message: "Initial commit"
+        target-branch: master
