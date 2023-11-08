@@ -29,7 +29,6 @@ jobs:
           post-cleanup: 'all'
 
     - name: Setup git
-      working-directory: ./repo # to avoid nested git problem
       run: |
         git config --global user.email "github.action@example.com"
         git config --global user.name "Github Action"
