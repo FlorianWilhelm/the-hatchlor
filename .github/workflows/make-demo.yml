@@ -35,7 +35,6 @@ jobs:
 
     - name: Run cookiecutter
       run: cookiecutter --no-input ./hatchlor-template
-      shell: bash -el {0}
 
     - name: Test some hatch commands
       working-directory: ./python-hatch-project
@@ -44,7 +43,6 @@ jobs:
         hatch run cov
         hatch run lint:all
         hatch run pre-commit run --all-files
-      shell: bash -el {0}
 
     - name: Push to the-hatchlor-demo
       uses: cpina/github-action-push-to-another-repository@devel
@@ -56,5 +54,4 @@ jobs:
         destination-repository-username: "FlorianWilhelm"
         destination-repository-name: "the-hatchlor-demo"
         user-email: florian.wilhelm@gmail.com
-        commit-message: "Initial commit"
         target-branch: main
