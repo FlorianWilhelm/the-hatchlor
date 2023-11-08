@@ -10,23 +10,23 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        shell: bash -l {0}
+        shell: bash -el {0}
     steps:
+    - name: Checkout Repo
+      uses: actions/checkout@v3
+      with:
+        path: ./hatchlor-template
+
     - name: Setup Python environment
       uses: mamba-org/setup-micromamba@v1
       with:
-          micromamba-version: '1.5.3'
-          environment-file: test_environment.yml
+          micromamba-version: 'latest'
+          environment-file: ./hatchlor-template/.github/test_environment.yml
           init-shell: >-
             bash
             powershell
           cache-environment: true
           post-cleanup: 'all'
-
-    - name: Checkout Repo
-      uses: actions/checkout@v3
-      with:
-        path: ./hatchlor-template
 
     - name: Setup git
       working-directory: ./repo # to avoid nested git problem
@@ -45,7 +45,7 @@ jobs:
         hatch run lint:all
         hatch run pre-commit run --all-files
       shell: bash -el {0}
-      
+
     - name: Push to the-hatchlor-demo
       uses: cpina/github-action-push-to-another-repository@devel
       env:

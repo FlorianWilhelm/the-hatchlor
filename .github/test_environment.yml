@@ -1,6 +1,6 @@
 # Only used for our Github CI/CD workflow, completely unrelated to hatch or the hatchlor.
 
-name: test_env
+name: test-env
 channels:
   - conda-forge
 dependencies:
