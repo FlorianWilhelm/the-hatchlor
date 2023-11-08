@@ -91,21 +91,21 @@ To start this project off a lot of inspiration was taken from [hatch], [cookiecu
 [virtualenv]: https://virtualenv.pypa.io/
 [demonstration of a Python project]: https://github.com/FlorianWilhelm/the-hatchlor-demo
 
-[Tests-image]: https://github.com/FlorianWilhelm/the-hatchlor/actions/workflows/make-demo.yml/badge.svg
-[Tests-link]: https://github.com/FlorianWilhelm/the-hatchlor/actions/workflows/make-demo.yml
+[Tests-image]: https://github.com/FlorianWilhelm/the-hatchlor/actions/workflows/run-tests.yml/badge.svg?branch=main
+[Tests-link]: https://github.com/FlorianWilhelm/the-hatchlor/actions/workflows/run-tests.yml
 [hatch-image]: https://img.shields.io/badge/%F0%9F%A5%9A-Hatch-4051b5.svg
 [hatch-link]: https://github.com/pypa/hatch
 [ruff-image]: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/charliermarsh/ruff/main/assets/badge/v0.json
 [ruff-link]: https://github.com/charliermarsh/ruff
-[mypy-image]: https://img.shields.io/badge/types-mypy-blue.svg
+[mypy-image]: https://img.shields.io/badge/Types-mypy-blue.svg
 [mypy-link]: https://mypy-lang.org/
-[pytest-image]: https://img.shields.io/badge/test-pytest-green.svg
+[pytest-image]: https://img.shields.io/badge/Tests-pytest-green.svg
 [pytest-link]:  https://docs.pytest.org/
-[mkdocs-image]: https://img.shields.io/badge/docs-mkdocs-blue.svg
+[mkdocs-image]: https://img.shields.io/badge/Docs-mkdocs-blue.svg
 [mkdocs-link]: https://www.mkdocs.org/
-[precommit-image]: https://img.shields.io/badge/linting-pre--commit-red.svg
+[precommit-image]: https://img.shields.io/badge/Linting-pre--commit-red.svg
 [precommit-link]:  https://pre-commit.com/
-[MIT-image]: https://img.shields.io/badge/license-MIT-9400d3.svg
+[MIT-image]: https://img.shields.io/badge/License-MIT-9400d3.svg
 [MIT-link]: LICENSE.txt
 [sponsor-image]: https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=ff69b4
 [sponsor-link]: https://github.com/sponsors/FlorianWilhelm
