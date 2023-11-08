@@ -26,7 +26,7 @@ classifiers = [ # ToDo: Modify according to your needs!
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: Implementation :: CPython",
 ]
-# direct dependencies of this package
+# direct dependencies of this package, installed when users `pip install {{ cookiecutter.project_slug }}` later.
 dependencies = [ # ToDo: Modify according to your needs!
     "typer",
     "numpy",
@@ -50,6 +50,10 @@ Source = "{{ cookiecutter.project_repo }}"
 ######################
 # Build & Versioning #
 ######################
+
+[tool.hatch.metadata]
+# direct dependency references, e.g `pip @ git+https://github.com/pypa/pip.git@master`
+allow-direct-references = true
 
 [tool.hatch.version]
 source = "vcs"
@@ -77,12 +81,6 @@ show_column_numbers = true
 warn_no_return = false
 warn_unused_ignores = true
 
-[tool.black]
-include = '\.pyi?$'
-line-length = 120
-skip-string-normalization = true
-target-version = ["{{ 'py' ~ cookiecutter.target_python_version.replace('.', '') }}"] # ToDo: Modify according to your needs!
-
 [tool.pytest.ini_options]
 minversion = "6.0"
 addopts = "-ra -q --doctest-glob='*.md'"
@@ -93,10 +91,9 @@ testpaths = [
 [tool.coverage.run]
 branch = true
 source = ["src/{{ cookiecutter.pkg_name }}"]
-# omit = [
-#   "bad_file.py",
-# ]
-#
+omit = [
+    "_version.py",  # automatically created by hatch-vcs, not in repo
+]
 
 [tool.coverage.paths]
 source = [
@@ -127,52 +124,60 @@ exclude_lines = [
 [tool.ruff]
 target-version = "{{ 'py' ~ cookiecutter.target_python_version.replace('.', '') }}" # ToDo: Modify according to your needs!
 line-length = 120
-include = ["src/**/*.py", "src/**/*.pyi", "**/pyproject.toml"]
+preview = true # preview features & checks, use with caution
+extend-select = [ # features in preview
+    "W292", # missing-newline-at-end-of-file
+]
+include = ["src/**/*.py", "src/**/*.pyi", "tests/**/*.py", "tests/**/*.pyi"]
 select = [
-  "A",
-  "B",
-  "C",
-  "DTZ",
-  "E",
-  "EM",
-  "F",
-  "FBT", # Boolean trap
-  "I",
-  "ICN",
-  "ISC",
-  "N",
-  "PLC",
-  "PLE",
-  "PLR",
-  "PLW",
-  "Q",
-  "RUF",
-  "S",
-  "SIM",
-  "T",
-  "TID",
-  "UP",
-  "W",
-  "YTT",
-  "RUF100", # Automatically remove unused # noqa directives
+    "A",
+    "B",
+    "C",
+    "DTZ",
+    "E",
+    "EM",
+    "F",
+    "FBT", # Boolean trap
+    "I",
+    "ICN",
+    "ISC",
+    "N",
+    "PLC",
+    "PLE",
+    "PLR",
+    "PLW",
+    "Q",
+    "RUF",
+    "S",
+    "SIM",
+    "T",
+    "TID",
+    "UP",
+    "W",
+    "YTT",
+    "RUF100", # Automatically remove unused # noqa directives
 ]
 ignore = [
-  # Allow non-abstract empty methods in abstract base classes
-  "B027",
-  # Allow boolean positional values in function calls, like `dict.get(... True)`
-  "FBT003",
-  # Ignore checks for possible passwords
-  "S105", "S106", "S107",
-  # Ignore complexity
-  "C901", "PLR0911", "PLR0912", "PLR0913", "PLR0915",
-  "PLC1901", # empty string comparisons
-  "PLW2901", # `for` loop variable overwritten
-  "SIM114", # Combine `if` branches using logical `or` operator
-  "B008", # Function call in default arguments as used by Typer
+    # Allow non-abstract empty methods in abstract base classes
+    "B027",
+    # Allow boolean positional values in function calls, like `dict.get(... True)`
+    "FBT003",
+    # Ignore checks for possible passwords
+    "S105", "S106", "S107",
+    # Ignore complexity
+    "C901", "PLR0911", "PLR0912", "PLR0913", "PLR0915",
+    "PLC1901", # empty string comparisons
+    "PLW2901", # `for` loop variable overwritten
+    "SIM114", # Combine `if` branches using logical `or` operator
+    "E203", # Whitespace before :, needed for black compatability and also `ruff format`
+    "ISC001", # causes unexpected behaviour with formatter
 ]
 unfixable = [
-  # "F401",  # Don't touch unused imports
+    # "F401",  # Don't touch unused imports
 ]
+
+[tool.ruff.format]
+quote-style = 'single' # be more like black
 
 [tool.ruff.isort]
 known-first-party = ["{{ cookiecutter.pkg_name }}"]
@@ -260,20 +265,23 @@ build-check = [
 [tool.hatch.envs.lint]
 skip-install = true
 dependencies = [
-    "black>=23.1.0",
-    "mypy>=1.0.0",
-    "ruff>=0.0.259",
+    "mypy~=1.6",
+    "ruff==0.1.4",
 ]
 [tool.hatch.envs.lint.scripts]
-typing = "mypy --install-types --non-interactive"
-style = [
-    "ruff {args:.}",
-    "black --check --diff .",
+typing = [
+    "echo \"VERSION: `mypy --version`\"",
+    "mypy --install-types --non-interactive {args}"
 ]
-fmt = [
-    "black {args:.}",
+style = [
+    "echo \"VERSION: `ruff --version`\"",
+    "ruff {args:.}",
+    "ruff format --check {args:.}",
+]
+fix = [
+    "ruff format {args:.}",
     "ruff --fix {args:.}",
-    "style",
+    "style",  # feedback on what is not fixable
 ]
 all = [
     "style",
@@ -282,4 +290,4 @@ all = [
 
 # Test matrix replacing the functionality of tox
 [[tool.hatch.envs.test.matrix]]
-python = ["310", "311"]
+python = ["310", "311", "312"]

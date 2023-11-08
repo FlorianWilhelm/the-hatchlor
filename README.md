@@ -4,20 +4,30 @@
 <img src="https://raw.githubusercontent.com/FlorianWilhelm/the-hatchlor/master/images/logo.svg" alt="The Hatchlor logo" width="300" role="img">
 </div>
 
+|         |                                    |
+|---------|------------------------------------|
+| Details | [![Tests][Tests-image]][Tests-link] [![License - MIT][MIT-image]][MIT-link] [![GitHub Sponsors][sponsor-image]][sponsor-link] |
+| Features | [![Hatch project][hatch-image]][hatch-link] [![linting - Ruff][ruff-image]][ruff-link] [![types - mypy][mypy-image]][mypy-link] [![test - pytest][pytest-image]][pytest-link]  [![linting - precommit][precommit-image]][precommit-link] [![docs - mkdocs][mkdocs-image]][mkdocs-link] |
+
 The Hatchlor is a [cookiecutter] template featuring the modern and extensible Python project manager [hatch] 🐣.
+
+With hatch, you no longer need to deal with files like `requirements.txt`, `Pipfile` or `environment.yml`,
+just configure everything in `pyproject.toml`. Thus, hatch is a sophisticated alternative to [pipenv], [poetry], [conda], or
+direct [virtualenv] usage. Just think of hatch as a tool that allows you to easily define many isolated development environmnets,
+e.g. virtual but also docker environments, and helps you to manage them. A bit like what [tox] does for testing environments but
+for all kinds of environments, e.g. testing, linting your code, buildings your docs, and whatever you want.
 
 ## ✨ Features
 
 The Hatchlor integrates the following features:
 
-* [hatch]: Python packaging, environment management and test runner ([tox] replacement),
+* [hatch]: Python packaging, environment management and test runner,
 * [hatch-vcs]: determine the package version automatically from git tags, e.g. `v0.9`,
 * [pyproject.toml]: all package, build and tool configuration in one file,
 * [pytest]: full-featured Python testing tool that helps you write better programs,
 * [coverage]: tool for measuring code coverage of Python programs with pytest integration,
-* [ruff]: extremely fast Python linter, which replaces [isort], [flake8], etc.,
+* [ruff]: extremely fast Python linter/formatter, which replaces [isort], [flake8], [black], etc.,
 * [mypy]: optional static type checker for Python,
-* [black]: the uncompromising Python code formatter everyone loves,
 * [mkdocs]: a fast, simple and downright gorgeous static site generator,
 * [pre-commit]: pre-commit git hooks that make your life easier,
 * [Markdown]: instead of reStructuredText, Markdown is used consistently for all text files,
@@ -43,7 +53,7 @@ Then generate your Python project with:
 cookiecutter https://github.com/florianwilhelm/the-hatchlor.git
 ```
 
-🎉 That's  it! You can now change into the created directory and check out `README.md` for more.
+🎉 That's  it! Now change into the created directory and **check out `README.md`** for more information on how to use hatch.
 
 ## 🪪 License
 
@@ -73,3 +83,26 @@ To start this project off a lot of inspiration was taken from [hatch], [cookiecu
 [EditorConfig]: http://editorconfig.org/
 [Typer]: https://typer.tiangolo.com/
 [pyproject.toml]: https://hatch.pypa.io/latest/config/metadata/
+[pipenv]: https://pipenv.pypa.io/
+[poetry]: https://python-poetry.org/
+[conda]: https://docs.conda.io/
+[virtualenv]: https://virtualenv.pypa.io/
+
+[Tests-image]: https://github.com/FlorianWilhelm/the-hatchlor/actions/workflows/make-demo.yml/badge.svg
+[Tests-link]: https://github.com/FlorianWilhelm/the-hatchlor/actions/workflows/make-demo.yml
+[hatch-image]: https://img.shields.io/badge/%F0%9F%A5%9A-Hatch-4051b5.svg
+[hatch-link]: https://github.com/pypa/hatch
+[ruff-image]: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/charliermarsh/ruff/main/assets/badge/v0.json
+[ruff-link]: https://github.com/charliermarsh/ruff
+[mypy-image]: https://img.shields.io/badge/types-mypy-blue.svg
+[mypy-link]: https://mypy-lang.org/
+[pytest-image]: https://img.shields.io/badge/test-pytest-green.svg
+[pytest-link]:  https://docs.pytest.org/
+[mkdocs-image]: https://img.shields.io/badge/docs-mkdocs-blue.svg
+[mkdocs-link]: https://www.mkdocs.org/
+[precommit-image]: https://img.shields.io/badge/linting-pre--commit-red.svg
+[precommit-link]:  https://pre-commit.com/
+[MIT-image]: https://img.shields.io/badge/license-MIT-9400d3.svg
+[MIT-link]: LICENSE.txt
+[sponsor-image]: https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=ff69b4
+[sponsor-link]: https://github.com/sponsors/FlorianWilhelm

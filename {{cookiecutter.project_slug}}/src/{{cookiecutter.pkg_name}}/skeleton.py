@@ -17,9 +17,11 @@ References:
     - https://setuptools.pypa.io/en/latest/userguide/entry_point.html
     - https://pip.pypa.io/en/stable/reference/pip_install
 """
+
 import enum
 import logging
 import sys
+from typing import Annotated
 
 import typer
 
@@ -62,8 +64,8 @@ app = typer.Typer(
 
 @app.command()
 def main(
-    n: int = typer.Argument(..., min=1, help='Positive integer'),
-    log_level: LogLevel = typer.Option(LogLevel.INFO, help='Log level'),
+    n: Annotated[int, typer.Argument(..., min=1, help='Positive integer')],
+    log_level: Annotated[LogLevel, typer.Option(help='Log level')] = LogLevel.INFO,
 ):
     """Wrapper allowing :func:`fib` to be called with string arguments in a CLI fashion
 

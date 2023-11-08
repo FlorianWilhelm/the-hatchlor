@@ -2,6 +2,7 @@
 
 Notion-API: https://developers.notion.com/reference/intro
 """
+
 from importlib.metadata import PackageNotFoundError, version
 
 try:
