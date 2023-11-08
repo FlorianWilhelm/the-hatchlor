@@ -12,10 +12,6 @@ jobs:
       run:
         shell: bash -l {0}
     steps:
-    - name: Checkout Repo
-      uses: actions/checkout@v3
-      with:
-        path: ./hatchlor-template
     - name: Setup Python environment
       uses: mamba-org/setup-micromamba@v1
       with:
@@ -26,18 +22,22 @@ jobs:
             powershell
           cache-environment: true
           post-cleanup: 'all'
-    # - name: Set up Python
-    #   uses: actions/setup-python@v4
-    #   with:
-    #     python-version: "3.10"
+
+    - name: Checkout Repo
+      uses: actions/checkout@v3
+      with:
+        path: ./hatchlor-template
+
     - name: Setup git
       working-directory: ./repo # to avoid nested git problem
       run: |
         git config --global user.email "github.action@example.com"
         git config --global user.name "Github Action"
+
     - name: Run cookiecutter
       run: cookiecutter --no-input ./hatchlor-template
       shell: bash -el {0}
+
     - name: Test some hatch commands
       run: |
         hatch run fibonacci 10
@@ -45,6 +45,7 @@ jobs:
         hatch run lint:all
         hatch run pre-commit run --all-files
       shell: bash -el {0}
+      
     - name: Push to the-hatchlor-demo
       uses: cpina/github-action-push-to-another-repository@devel
       env:
