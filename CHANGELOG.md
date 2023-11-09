@@ -4,6 +4,7 @@
 
 - Fix: replace periods with underscores when determining `pkg_name` from `project_slug`
 - Fix: add `[tool.hatch.build]` -> `packages` in `pyproject.toml` to resolve package if `project_slug` != `pkg_name`
+- Fix: have less dependencies in the `pyproject.toml` as example to speed up demonstrations
 
 ## Version 0.2.1
 

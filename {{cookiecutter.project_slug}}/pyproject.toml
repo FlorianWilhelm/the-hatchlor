@@ -29,9 +29,9 @@ classifiers = [ # ToDo: Modify according to your needs!
 # direct dependencies of this package, installed when users `pip install {{ cookiecutter.project_slug }}` later.
 dependencies = [ # ToDo: Modify according to your needs!
     "typer",
-    "numpy",
-    "matplotlib",
-    "seaborn"
+    # "numpy",
+    # "matplotlib",
+    # "seaborn",
 ]
 dynamic = ["version"]
 
