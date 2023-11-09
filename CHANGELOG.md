@@ -1,5 +1,9 @@
 # Changelog
 
+## Version 0.2.2
+
+- Fix: replace periods with underscores when determining `pkg_name` from `project_slug`
+
 ## Version 0.2.1
 
 - Fix: `CHANGELOG.md` in template included the changes of Hatchlor itself, now it's a dummy again
