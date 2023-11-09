@@ -2,7 +2,7 @@
 
 ## Version 0.2.1
 
-- Fix: `CHANGELOG.md` in template included the changes of Hatchlor itself, now it's a dummmy again
+- Fix: `CHANGELOG.md` in template included the changes of Hatchlor itself, now it's a dummy again
 
 ## Version 0.2
 
@@ -15,7 +15,7 @@
 - Fix: Removed unnecessary "fix requirements.txt" in `pre-commit` configuration
 - Docs: More explanation of what `hatch` does and how to use it in `Readme.md` of the template
 - Docs: More explanation of `hatch` in general in the-hatchlor's `Readme.md`
-- Test: Also have a Github CI/CD test and a demo repo of the instanciated template
+- Test: Also have a Github CI/CD test and a demo repo of the instantiated template
 
 ## Version 0.1
 
