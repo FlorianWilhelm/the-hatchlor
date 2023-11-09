@@ -1,5 +1,9 @@
 # Changelog
 
+## Version 0.2.1
+
+- Fix: `CHANGELOG.md` in template included the changes of Hatchlor itself, now it's a dummmy again
+
 ## Version 0.2
 
 - New: Allow the selection of Python 3.12 when setting up the template
