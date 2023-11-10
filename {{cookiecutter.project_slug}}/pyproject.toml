@@ -11,8 +11,12 @@ name = "{{ cookiecutter.project_slug }}"
 description = "{{ cookiecutter.project_short_description }}"
 readme = "README.md"
 requires-python = ">={{ cookiecutter.target_python_version }}"
-# use license identifier from https://spdx.org/licenses/
+{% if not cookiecutter.open_source_license == 'proprietary' %}
+# only license identifier from https://spdx.org/licenses/ allowed
 license = "{{ cookiecutter.open_source_license }}"
+{% endif %}
+license-files = { paths = ["LICENSE.txt"] }
+
 # keywords for easier look-up on PyPI
 keywords = ["keyword_1", "keyword_2"] # ToDo: Modify according to your needs!
 authors = [
@@ -180,7 +184,7 @@ unfixable = [
 ]
 
 [tool.ruff.format]
-quote-style = 'single' # be more like black
+quote-style = "single" # be more like black
 
 [tool.ruff.isort]
 known-first-party = ["{{ cookiecutter.pkg_name }}"]

@@ -1,5 +1,9 @@
 # Changelog
 
+## Version 0.2.3
+
+- fix: license `propriertary` doesn't break hatch as it is no SPX license
+
 ## Version 0.2.2
 
 - Fix: replace periods with underscores when determining `pkg_name` from `project_slug`
