@@ -17,7 +17,7 @@ direct [virtualenv] usage. Just think of hatch as a tool that allows you to easi
 e.g. virtual but also docker environments, and helps you to manage them. A bit like what [tox] does for testing environments but
 for all kinds of environments, e.g. testing, linting your code, buildings your docs, and whatever you want.
 
-Check out a [demonstration of a Python project] created by the Hatchlor.
+Check out a [vanilla Python project] created by the Hatchlor.
 
 ## ✨ Features
 
@@ -89,7 +89,7 @@ To start this project off a lot of inspiration was taken from [hatch], [cookiecu
 [poetry]: https://python-poetry.org/
 [conda]: https://docs.conda.io/
 [virtualenv]: https://virtualenv.pypa.io/
-[demonstration of a Python project]: https://github.com/FlorianWilhelm/the-hatchlor-demo
+[vanilla Python project]: https://github.com/FlorianWilhelm/the-hatchlor-demo
 [`README.md`]: https://github.com/FlorianWilhelm/the-hatchlor-demo
 
 [Tests-image]: https://github.com/FlorianWilhelm/the-hatchlor/actions/workflows/run-tests.yml/badge.svg?branch=main
