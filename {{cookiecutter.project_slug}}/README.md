@@ -13,7 +13,7 @@
 To set up [hatch] and [pre-commit] for the first time:
 
 1. install [hatch] globally, e.g. with [pipx], i.e. `pipx install hatch`,
-2. optionally run `hatch config set dirs.env.virtual .direnv` to let [VSC] find your virtual environments,
+2. optionally run `hatch config set dirs.env.virtual .direnv` to let [VS Code] find your virtual environments,
 3. make sure `pre-commit` is installed globally, e.g. with `pipx install pre-commit`,
 4. run `pre-commit install` to install [pre-commit].
 
@@ -39,4 +39,4 @@ This package was created with [The Hatchlor] project template.
 [pipx]: https://pypa.github.io/pipx/
 [hatch]: https://hatch.pypa.io/
 [pre-commit]: https://pre-commit.com/
-[VSC]: https://code.visualstudio.com/docs/python/environments#_where-the-extension-looks-for-environments
+[VS Code]: https://code.visualstudio.com/docs/python/environments#_where-the-extension-looks-for-environments
