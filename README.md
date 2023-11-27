@@ -13,7 +13,7 @@ The Hatchlor is a [cookiecutter] template featuring the modern and extensible Py
 
 With hatch, you no longer need to deal with files like `requirements.txt`, `Pipfile` or `environment.yml`,
 just configure everything in `pyproject.toml`. Thus, hatch is a sophisticated alternative to [pipenv], [poetry], [conda], or
-direct [virtualenv] usage. Just think of hatch as a tool that allows you to easily define many isolated development environmnets,
+direct [virtualenv] usage. Just think of hatch as a tool that allows you to easily define many isolated development environments,
 e.g. virtual but also docker environments, and helps you to manage them. A bit like what [tox] does for testing environments but
 for all kinds of environments, e.g. testing, linting your code, buildings your docs, and whatever you want.
 
@@ -25,6 +25,7 @@ The Hatchlor integrates the following features:
 
 * [hatch]: Python packaging, environment management and test runner,
 * [hatch-vcs]: determine the package version automatically from git tags, e.g. `v0.9`,
+* [hatch-pip-compile]: *experimental* support for lock-files,
 * [pyproject.toml]: all package, build and tool configuration in one file,
 * [pytest]: full-featured Python testing tool that helps you write better programs,
 * [coverage]: tool for measuring code coverage of Python programs with pytest integration,
@@ -55,7 +56,7 @@ Then generate your Python project with:
 cookiecutter https://github.com/florianwilhelm/the-hatchlor.git
 ```
 
-🎉 That's  it! Now change into the created directory and check out [`README.md`] for more information on how to use hatch.
+🎉 That's  it! Now change into the created directory and check out [`README.md`] for more information.
 
 ## 🪪 License
 
@@ -69,6 +70,7 @@ To start this project off a lot of inspiration was taken from [hatch], [cookiecu
 [tox]: https://tox.wiki/
 [hatch]: https://hatch.pypa.io/
 [hatch-vcs]: https://github.com/ofek/hatch-vcs
+[hatch-pip-compile]: https://github.com/juftin/hatch-pip-compile
 [cookiecutter-pypackage]: https://github.com/audreyfeldroy/cookiecutter-pypackage
 [Pyscaffold]: https://pyscaffold.org/
 [pre-commit]: https://pre-commit.com/

@@ -1,0 +1,13 @@
+default_context:
+    full_name: "Harro Hatchlor"
+    email: "harro@hatchlor.com"
+    github_username: "hatchlor"
+    project_name: "Hatchlor demo project"
+    project_slug: "hatchlor-demo"
+    project_short_description: "Python project featuring the Python project manager hatch powerd by the Hatchlor."
+    open_source_license: "MIT"
+    target_python_version: "3.10"
+    project_repo: "https://github.com/FlorianWilhelm/the-hatchlor-demo"
+    pypi_username: "{{ cookiecutter.github_username }}"
+    lock_file_support: false
+    

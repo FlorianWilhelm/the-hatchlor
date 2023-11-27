@@ -12,7 +12,7 @@ description = "{{ cookiecutter.project_short_description }}"
 readme = "README.md"
 requires-python = ">={{ cookiecutter.target_python_version }}"
 {%- if not cookiecutter.open_source_license == 'proprietary' %}
-# only license identifier from https://spdx.org/licenses/ allowed
+# only license identifier from https://spdx.org/licenses/ are allowed
 license = "{{ cookiecutter.open_source_license }}"
 {%- endif %}
 license-files = { paths = ["LICENSE.txt"] }
@@ -205,24 +205,44 @@ ban-relative-imports = "all"
 #####################
 # Environment Setup #
 #####################
+{%- if cookiecutter.lock_file_support %}
 
-# Default environment, i.e. development dependencies
+[tool.hatch.env]
+requires = ["hatch-pip-compile~=1.2"]
+{%- endif %}
+
+# Default environment with production dependencies
 [tool.hatch.envs.default]
+python = "{{ cookiecutter.target_python_version }}"
+path = ".direnv"  # to have VSCode support
+post-install-commands = ["pre-commit install"]
+{%- if cookiecutter.lock_file_support %}
+type = "pip-compile"
+pip-compile-constraint = "default"  # keep locks between default & others consistent
+lock-filename = "locks/{env_name}.lock"
+pip-compile-hashes = true
+{%- endif %}
+dependencies = []
+{%- if cookiecutter.lock_file_support %}
+[tool.hatch.envs.default.scripts]
+upgrade-all = "PIP_COMPILE_UPGRADE=1 hatch env run --env {env_name} -- python --version"
+upgrade-pkg = "PIP_COMPILE_UPGRADE='{args}' hatch env run --env {env_name} -- python --version"
+{%- endif %}
+
+# Test environment, i.e. development dependencies
+[tool.hatch.envs.test]
 dependencies = [ # ToDo: Modify according to your needs!
-    "hatch",
-    "hatch-vcs", # to make `hatch version` available
     "coverage[toml]>=6.2",
     "pytest",
     "pytest-cov",
     "pytest-mock",
     "pytest-vcr",
+    "pytest-sugar",
     "hypothesis",
-    "jupyterlab",
-    "pre-commit",
     "mypy",
     "ruff"
 ]
-[tool.hatch.envs.default.scripts]
+[tool.hatch.envs.test.scripts]
 cov = "pytest --cov-report=term-missing --cov-config=pyproject.toml --cov=src/{{ cookiecutter.pkg_name }} --cov=tests {args}"
 no-cov = "cov --no-cov {args}"
 debug =  "cov --no-cov -s --pdb --pdbcls=IPython.core.debugger:Pdb {args}"
@@ -230,27 +250,25 @@ debug =  "cov --no-cov -s --pdb --pdbcls=IPython.core.debugger:Pdb {args}"
 # Docs environment
 [tool.hatch.envs.docs]
 dependencies = [
-    "mkdocs~=1.4.0",
-    "mkdocs-material~=8.5.6",
+    "mkdocs~=1.5",
+    "mkdocs-material~=9.4",
     # Plugins
     "mkdocs-include-markdown-plugin",
     "mkdocs-gen-files",
     "mkdocs-literate-nav",
-    "mkdocs-minify-plugin~=0.5.0",
+    "mkdocs-minify-plugin~=0.5",
     "mkdocs-section-index",
-    "mkdocs-git-revision-date-localized-plugin~=1.1.0",
+    "mkdocs-git-revision-date-localized-plugin~=1.1",
     "mkdocstrings[python]",
-    "mkdocs-redirects~=1.1.0",
+    "mkdocs-redirects~=1.2",
     "mkdocs-glightbox~=0.3.0",
-    # https://github.com/jimporter/mike/issues/82#issuecomment-1172913929
-    "mike @ https://github.com/jimporter/mike/archive/392d57b8bb9d14bcedf2451a0dc302709f8055eb.zip",
+    "mike~=2.0.0",
     # Extensions
-    "pymdown-extensions~=9.6.0",
+    "pymdown-extensions~=10.5",
     # Necessary for syntax highlighting in code blocks
-    "pygments~=2.13.0",
+    "pygments~=2.13",
     # Validation
-    # https://github.com/linkchecker/linkchecker/pull/669#issuecomment-1267236287
-    "linkchecker @ git+https://github.com/linkchecker/linkchecker.git@d9265bb71c2054bf57b8c5734a4825d62505c779",
+    "linkchecker~=10.3",
     ]
 [tool.hatch.envs.docs.env-vars]
 SOURCE_DATE_EPOCH = "1580601600"
@@ -272,8 +290,8 @@ build-check = [
 [tool.hatch.envs.lint]
 skip-install = true
 dependencies = [
-    "mypy~=1.6",
-    "ruff==0.1.4",
+    "mypy~=1.7",
+    "ruff~=0.1.6",
 ]
 [tool.hatch.envs.lint.scripts]
 typing = [
@@ -295,6 +313,7 @@ all = [
     "typing",
 ]
 
-# Test matrix replacing the functionality of tox
-[[tool.hatch.envs.test.matrix]]
+# Test matrix for various Python versions replacing the functionality of tox
+[[tool.hatch.envs.py-test.matrix]]
+template = ["test"]
 python = ["310", "311", "312"]

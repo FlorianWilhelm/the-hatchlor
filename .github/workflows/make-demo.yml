@@ -4,6 +4,14 @@ name: Build demo
 
 on:
   workflow_dispatch:
+    inputs:
+      config:
+        description: 'Project configuration'
+        required: true
+        type: choice
+        options:
+          - default.yml
+          - lock-file.yml
 
 jobs:
   make-demo:
@@ -20,13 +28,13 @@ jobs:
     - name: Setup Python environment
       uses: mamba-org/setup-micromamba@v1
       with:
-          micromamba-version: 'latest'
-          environment-file: ./hatchlor-template/.github/test_environment.yml
-          init-shell: >-
-            bash
-            powershell
-          cache-environment: true
-          post-cleanup: 'all'
+        micromamba-version: 'latest'
+        environment-file: ./hatchlor-template/.github/test_environment.yml
+        init-shell: >-
+          bash
+          powershell
+        cache-environment: true
+        post-cleanup: 'all'
 
     - name: Setup git
       run: |
@@ -34,18 +42,18 @@ jobs:
         git config --global user.name "Github Action"
 
     - name: Run cookiecutter
-      run: cookiecutter --no-input ./hatchlor-template
+      run: cookiecutter --no-input ./hatchlor-template --config-file ./hatchlor-template/configs/${{ github.event.inputs.config }}
 
     - name: Test some hatch commands
-      working-directory: ./python-hatch-project
+      working-directory: ./hatchlor-demo
       run: |
         hatch run fibonacci 10
-        hatch run cov
+        hatch run test:cov
         hatch run lint:all
         hatch run pre-commit run --all-files
 
     - name: Remove git repo for next step
-      working-directory: ./python-hatch-project
+      working-directory: ./hatchlor-demo
       run: rm -rf .git
 
     - name: Push to the-hatchlor-demo
@@ -53,7 +61,7 @@ jobs:
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
-        source-directory: "python-hatch-project/"
+        source-directory: "hatchlor-demo/"
         destination-github-username: "FlorianWilhelm"
         destination-repository-username: "FlorianWilhelm"
         destination-repository-name: "the-hatchlor-demo"

@@ -8,6 +8,9 @@ on:
 jobs:
   run-tests:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        cookiecutter_cfg: ['default.yml', 'lock-file.yml']  # Example arguments for the hatch command
     defaults:
       run:
         shell: bash -el {0}
@@ -20,13 +23,13 @@ jobs:
     - name: Setup Python environment
       uses: mamba-org/setup-micromamba@v1
       with:
-          micromamba-version: 'latest'
-          environment-file: ./hatchlor-template/.github/test_environment.yml
-          init-shell: >-
-            bash
-            powershell
-          cache-environment: true
-          post-cleanup: 'all'
+        micromamba-version: 'latest'
+        environment-file: ./hatchlor-template/.github/test_environment.yml
+        init-shell: >-
+          bash
+          powershell
+        cache-environment: true
+        post-cleanup: 'all'
 
     - name: Setup git
       run: |
@@ -34,15 +37,20 @@ jobs:
         git config --global user.name "Github Action"
 
     - name: Run cookiecutter
-      run: cookiecutter --no-input ./hatchlor-template
-      shell: bash -el {0}
+      run: cookiecutter --no-input ./hatchlor-template --config-file ./hatchlor-template/configs/${{ matrix.cookiecutter_cfg }}
 
-    - name: Test some hatch commands
-      working-directory: ./python-hatch-project
+    - name: Test some general hatch commands
+      working-directory: ./hatchlor-demo
       run: |
         hatch run fibonacci 10
-        hatch run cov
+        hatch run test:cov
         hatch run lint:all
         hatch run pre-commit run --all-files
-      shell: bash -el {0}
       
+    - name: Test lock-file related commands
+      if: matrix.cookiecutter_cfg == 'lock-file.yml'
+      working-directory: ./hatchlor-demo
+      run: |
+          hatch run upgrade-all
+          hatch run test:upgrade-all
+          hatch run test:upgrade-pkg pytest
