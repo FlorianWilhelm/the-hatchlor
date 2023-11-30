@@ -13,7 +13,13 @@
 To set up [hatch] and [pre-commit] for the first time:
 
 1. install [hatch] globally, e.g. with [pipx], i.e. `pipx install hatch`,
-2. make sure `pre-commit` is installed globally, e.g. with `pipx install pre-commit`,
+{% if cookiecutter.lock_file_support -%}
+2. optionally run `hatch config set dirs.env.virtual .direnv` and `hatch config set dirs.env.pip-compile .direnv`
+   to let [VS Code] find your virtual environments,
+{% else -%}
+2. optionally run `hatch config set dirs.env.virtual .direnv` to let [VS Code] find your virtual environments,
+{% endif -%}
+3. make sure `pre-commit` is installed globally, e.g. with `pipx install pre-commit`,
 
 A special feature that makes hatch very different from other familiar tools is that you almost never
 activate, or enter, an environment. Instead, you use `hatch run env_name:command` and the `default` environment
@@ -44,6 +50,7 @@ This package was created with [The Hatchlor] project template.
 [pipx]: https://pypa.github.io/pipx/
 [hatch]: https://hatch.pypa.io/
 [pre-commit]: https://pre-commit.com/
+[VS Code]: https://code.visualstudio.com/docs/python/environments#_where-the-extension-looks-for-environments
 {%- if cookiecutter.lock_file_support %}
 [hatch-pip-compile]: https://github.com/juftin/hatch-pip-compile
 {%- endif %}

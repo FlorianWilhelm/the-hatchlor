@@ -4,7 +4,6 @@
 
 - New: use `post-install-commands = ["pre-commit install"]` in `pyproject.toml` to make sure the pre-commit hook is installed
 - Change: have a clean `default` environment and test-related tools are now in `test` environment
-- Change: set `path=.direnv` in `pyproject.toml` directly for VSCode support, instead of giving the hint to set it globally
 - New: add [pytest-sugar](https://github.com/Teemu/pytest-sugar/) to `test` environment
 - New: experimental lock-file support using [hatch-pip-compile](https://github.com/juftin/hatch-pip-compile)
 

@@ -214,7 +214,6 @@ requires = ["hatch-pip-compile~=1.2"]
 # Default environment with production dependencies
 [tool.hatch.envs.default]
 python = "{{ cookiecutter.target_python_version }}"
-path = ".direnv"  # to have VSCode support
 post-install-commands = ["pre-commit install"]
 {%- if cookiecutter.lock_file_support %}
 type = "pip-compile"
@@ -229,18 +228,23 @@ upgrade-all = "PIP_COMPILE_UPGRADE=1 hatch env run --env {env_name} -- python --
 upgrade-pkg = "PIP_COMPILE_UPGRADE='{args}' hatch env run --env {env_name} -- python --version"
 {%- endif %}
 
-# Test environment, i.e. development dependencies
+# Test environment with test-only dependencies
 [tool.hatch.envs.test]
-dependencies = [ # ToDo: Modify according to your needs!
+dependencies = [
+    # required test dependencies
     "coverage[toml]>=6.2",
     "pytest",
     "pytest-cov",
     "pytest-mock",
     "pytest-vcr",
     "pytest-sugar",
+    # additional test & development dependencies
+    # ToDo: Modify according to your needs!
     "hypothesis",
-    "mypy",
-    "ruff"
+    "jupyterlab",
+    "ipython",
+    "seaborn",
+    "pandas",
 ]
 [tool.hatch.envs.test.scripts]
 cov = "pytest --cov-report=term-missing --cov-config=pyproject.toml --cov=src/{{ cookiecutter.pkg_name }} --cov=tests {args}"
