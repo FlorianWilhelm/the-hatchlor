@@ -133,9 +133,9 @@ target-version = "{{ 'py' ~ cookiecutter.target_python_version.replace('.', '') 
 line-length = 120
 indent-width = 4
 include = [
-    "src/**/*.py", 
-    "src/**/*.pyi", 
-    "tests/**/*.py", 
+    "src/**/*.py",
+    "src/**/*.pyi",
+    "tests/**/*.py",
     "tests/**/*.pyi"
 ]
 
@@ -312,7 +312,7 @@ typing = [
 style = [
     "echo \"VERSION: `ruff --version`\"",
     "ruff check {args:.}",
-    "ruff format --diff {args:.}",
+    "ruff format --check {args:.}",
 ]
 fix = [
     "ruff format {args:.}",

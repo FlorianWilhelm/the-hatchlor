@@ -24,3 +24,4 @@ hatch run test:cov
 hatch run lint:all
 hatch run docs:build
 
+hatch run pre-commit run --all-files

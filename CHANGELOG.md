@@ -8,6 +8,7 @@
 - Chg: Changed `pyproject.toml` according the new ruff configuration
 - New: Activate social cards in mkdocs by default
 - Chg: Updated hatch-pip-compile, ruff & mypy versions in `pyproject.toml`
+- Fix: Some mkdocs deprecations, i.e. `materialx.emoji.twemoji`
 
 ## Version 0.3
 
