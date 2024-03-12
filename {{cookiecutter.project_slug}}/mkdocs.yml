@@ -63,6 +63,8 @@ watch:
 plugins:
   # Built-in
   search: {}
+  autorefs: {}
+  social: {}
   # Extra
   include-markdown: {}
   glightbox: {}

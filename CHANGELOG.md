@@ -1,9 +1,18 @@
 # Changelog
 
+## Version 0.4
+
+- Chg: update `.pre-commit-config.yaml` to newest version
+- Fix: remove `skip-install = true` in the `lint` environment which seems to have suppressed some mypy errors
+- Fix: remove superfluous `exclude: '^docs/conf.py'` from `.pre-commit-config.yaml`
+- Chg: Changed `pyproject.toml` according the new ruff configuration
+- New: Activate social cards in mkdocs by default
+- Chg: Updated hatch-pip-compile, ruff & mypy versions in `pyproject.toml`
+
 ## Version 0.3
 
 - New: use `post-install-commands = ["pre-commit install"]` in `pyproject.toml` to make sure the pre-commit hook is installed
-- Change: have a clean `default` environment and test-related tools are now in `test` environment
+- Chg: have a clean `default` environment and test-related tools are now in `test` environment
 - New: add [pytest-sugar](https://github.com/Teemu/pytest-sugar/) to `test` environment
 - New: experimental lock-file support using [hatch-pip-compile](https://github.com/juftin/hatch-pip-compile)
 
