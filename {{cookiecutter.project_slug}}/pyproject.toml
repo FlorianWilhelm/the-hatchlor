@@ -311,12 +311,12 @@ typing = [
 ]
 style = [
     "echo \"VERSION: `ruff --version`\"",
-    "ruff {args:.}",
-    "ruff format --check {args:.}",
+    "ruff check {args:.}",
+    "ruff format --diff {args:.}",
 ]
 fix = [
     "ruff format {args:.}",
-    "ruff --fix {args:.}",
+    "ruff check --fix {args:.}",
     "style",  # feedback on what is not fixable
 ]
 all = [

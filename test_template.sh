@@ -20,7 +20,7 @@ hatch clean
 hatch version
 
 hatch run fibonacci 10
-hatch run cov
+hatch run test:cov
 hatch run lint:all
 hatch run docs:build
 
