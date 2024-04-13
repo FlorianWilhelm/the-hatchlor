@@ -13,11 +13,10 @@ readme = "README.md"
 requires-python = ">={{ cookiecutter.target_python_version }}"
 {%- if cookiecutter.open_source_license == 'proprietary' %}
 license = { file = "LICENSE.txt" }
-{% else -%}
+{%- else -%}
 # only license identifier from https://spdx.org/licenses/ are allowed
 license = { text = "{{ cookiecutter.open_source_license }}"}
 {%- endif %}
-
 # keywords for easier look-up on PyPI
 keywords = ["keyword_1", "keyword_2"] # ToDo: Modify according to your needs!
 authors = [
