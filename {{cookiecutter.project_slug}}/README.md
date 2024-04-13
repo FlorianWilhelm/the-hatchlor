@@ -13,7 +13,6 @@
 To set up [hatch] and [pre-commit] for the first time:
 
 1. install [hatch] globally, e.g. with [pipx], i.e. `pipx install hatch`,
-{% if cookiecutter.lock_file_support -%}
 2. make sure `pre-commit` is installed globally, e.g. with `pipx install pre-commit`,
 
 A special feature that makes hatch very different from other familiar tools is that you almost never
