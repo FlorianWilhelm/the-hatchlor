@@ -47,6 +47,10 @@ jobs:
         hatch run lint:all
         hatch run pre-commit run --all-files
       
+    - name: Build the package
+      working-directory: ./hatchlor-demo
+      run: hatch build
+
     - name: Test lock-file related commands
       if: matrix.cookiecutter_cfg == 'lock-file.yml'
       working-directory: ./hatchlor-demo
