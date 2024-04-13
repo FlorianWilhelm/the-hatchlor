@@ -14,7 +14,7 @@ requires-python = ">={{ cookiecutter.target_python_version }}"
 {%- if not cookiecutter.open_source_license == 'proprietary' %}
 # only license identifier from https://spdx.org/licenses/ are allowed
 license = { text = "{{ cookiecutter.open_source_license }}"}
-{% else %}
+{% else -%}
 license = { file = "LICENSE.txt" }
 {%- endif %}
 
