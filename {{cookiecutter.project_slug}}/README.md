@@ -13,7 +13,7 @@
 To set up [hatch] and [pre-commit] for the first time:
 
 1. install [hatch] globally, e.g. with [pipx], i.e. `pipx install hatch`,
-2. make sure `pre-commit` is installed globally, e.g. with `pipx install pre-commit`,
+2. make sure `pre-commit` is installed globally, e.g. with `pipx install pre-commit`.
 
 A special feature that makes hatch very different from other familiar tools is that you almost never
 activate, or enter, an environment. Instead, you use `hatch run env_name:command` and the `default` environment
