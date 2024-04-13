@@ -1,5 +1,10 @@
 # Changelog
 
+## Version 0.5
+
+- Chg: remove note about adding `hatch config set dirs.env.virtual .direnv` as hatch is supported by VSC 1.88
+- Fix: remove `license-files` from `pyproject.toml` as this is not standardized
+
 ## Version 0.4
 
 - Chg: update `.pre-commit-config.yaml` to newest version
