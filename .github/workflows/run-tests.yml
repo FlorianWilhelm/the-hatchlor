@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        cookiecutter_cfg: ['default.yml', 'lock-file.yml']  # Example arguments for the hatch command
+        cookiecutter_cfg: ['default.yml', 'lock-file.yml', 'proprietary.yml']  
     defaults:
       run:
         shell: bash -el {0}
