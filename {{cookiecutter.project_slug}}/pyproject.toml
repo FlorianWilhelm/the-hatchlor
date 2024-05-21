@@ -28,6 +28,7 @@ classifiers = [ # ToDo: Modify according to your needs!
     "Programming Language :: Python",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: Implementation :: CPython",
 ]
 # direct dependencies of this package, installed when users `pip install {{ cookiecutter.project_slug }}` later.
@@ -227,13 +228,13 @@ post-install-commands = ["pre-commit install"]
 type = "pip-compile"
 pip-compile-constraint = "default"  # keep locks between default & others consistent
 lock-filename = "locks/{env_name}.lock"
-pip-compile-hashes = true
+pip-compile-hashes = false  # no hashes in lock files
 {%- endif %}
 dependencies = []
 {%- if cookiecutter.lock_file_support %}
 [tool.hatch.envs.default.scripts]
 upgrade-all = "PIP_COMPILE_UPGRADE=1 hatch env run --env {env_name} -- python --version"
-upgrade-pkg = "PIP_COMPILE_UPGRADE='{args}' hatch env run --env {env_name} -- python --version"
+upgrade-pkg = "PIP_COMPILE_UPGRADE_PACKAGE='{args}' hatch env run --env {env_name} -- python --version"
 {%- endif %}
 
 # Test environment with test-only dependencies
