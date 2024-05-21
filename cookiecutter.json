@@ -23,6 +23,6 @@
     "open_source_license": "Provide the [bold yellow]license[/] of this project",
     "pypi_username": "Optionally, provide a [bold yellow]PyPI user name[/]",
     "github_username": "Optionally, provide a [bold yellow]Github user name[/]",
-    "lock_file_support": "[bold red]Experimental:[/] Activate support for lock files?"
+    "lock_file_support": "Activate support for lock files?"
   }
 }

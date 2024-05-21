@@ -217,7 +217,7 @@ ban-relative-imports = "all"
 {%- if cookiecutter.lock_file_support %}
 
 [tool.hatch.env]
-requires = ["hatch-pip-compile~=1.11"]
+requires = ["hatch-pip-compile~=1.11.1"]
 {%- endif %}
 
 # Default environment with production dependencies
@@ -301,9 +301,10 @@ build-check = [
 
 # Lint environment
 [tool.hatch.envs.lint]
+template = "lint"  # don't inherit from default!
 dependencies = [
-    "mypy~=1.9.0",
-    "ruff~=0.3.2",
+    "mypy==1.10.0",
+    "ruff==0.4.4",
 ]
 [tool.hatch.envs.lint.scripts]
 typing = [

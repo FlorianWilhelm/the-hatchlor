@@ -25,7 +25,7 @@ The Hatchlor integrates the following features:
 
 * [hatch]: Python packaging, environment management and test runner,
 * [hatch-vcs]: determine the package version automatically from git tags, e.g. `v0.9`,
-* [hatch-pip-compile]: *experimental* support for lock-files,
+* [hatch-pip-compile]: support for lock-files,
 * [pyproject.toml]: all package, build and tool configuration in one file,
 * [pytest]: full-featured Python testing tool that helps you write better programs,
 * [coverage]: tool for measuring code coverage of Python programs with pytest integration,
