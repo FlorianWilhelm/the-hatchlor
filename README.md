@@ -7,7 +7,7 @@
 |         |                                    |
 |---------|------------------------------------|
 | Details | [![Tests][Tests-image]][Tests-link] [![License - MIT][MIT-image]][MIT-link] [![GitHub Sponsors][sponsor-image]][sponsor-link] |
-| Features | [![Hatch project][hatch-image]][hatch-link] [![linting - Ruff][ruff-image]][ruff-link] [![types - mypy][mypy-image]][mypy-link] [![test - pytest][pytest-image]][pytest-link]  [![linting - precommit][precommit-image]][precommit-link] [![docs - mkdocs][mkdocs-image]][mkdocs-link] |
+| Features | [![Hatch project][hatch-image]][hatch-link] [![linting - Ruff][ruff-image]][ruff-link] [![types - mypy][mypy-image]][mypy-link] [![test - pytest][pytest-image]][pytest-link]  [![Pre-Commit][precommit-image]][precommit-link] [![docs - mkdocs][mkdocs-image]][mkdocs-link] |
 
 The Hatchlor is a [cookiecutter] template featuring the modern and extensible Python project manager [hatch] 🐣.
 
@@ -102,12 +102,12 @@ To start this project off a lot of inspiration was taken from [hatch], [cookiecu
 [ruff-link]: https://github.com/charliermarsh/ruff
 [mypy-image]: https://img.shields.io/badge/Types-mypy-blue.svg
 [mypy-link]: https://mypy-lang.org/
-[pytest-image]: https://img.shields.io/badge/Tests-pytest-green.svg
+[pytest-image]: https://img.shields.io/static/v1?label=‎&message=Pytest&logo=Pytest&color=0A9EDC&logoColor=white
 [pytest-link]:  https://docs.pytest.org/
-[mkdocs-image]: https://img.shields.io/badge/Docs-mkdocs-blue.svg
+[mkdocs-image]: https://img.shields.io/static/v1?label=‎&message=mkdocs&logo=Material+for+MkDocs&color=526CFE&logoColor=white
 [mkdocs-link]: https://www.mkdocs.org/
-[precommit-image]: https://img.shields.io/badge/Linting-pre--commit-red.svg
-[precommit-link]:  https://pre-commit.com/
+[precommit-image]: https://img.shields.io/static/v1?label=‎&message=pre-commit&logo=pre-commit&color=76877c
+[precommit-link]: https://pre-commit.com/
 [MIT-image]: https://img.shields.io/badge/License-MIT-9400d3.svg
 [MIT-link]: LICENSE.txt
 [sponsor-image]: https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=ff69b4
