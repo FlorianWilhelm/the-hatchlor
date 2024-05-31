@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        cookiecutter_cfg: ['default.yml', 'lock-file.yml', 'proprietary.yml']  
+        cookiecutter_cfg: ['default.yml', 'lock-file.yml', 'proprietary.yml']
     defaults:
       run:
         shell: bash -el {0}
@@ -46,7 +46,7 @@ jobs:
         hatch run test:cov
         hatch run lint:all
         hatch run pre-commit run --all-files
-      
+
     - name: Build the package
       working-directory: ./hatchlor-demo
       run: hatch build

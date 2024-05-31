@@ -9,7 +9,7 @@ if [ -d "$PROJ_DIR" ]; then
   rm -rf "$PROJ_DIR"
 fi
 
-cookiecutter --no-input hatchlor 
+cookiecutter --no-input hatchlor
 
 cd $PROJ_DIR
 

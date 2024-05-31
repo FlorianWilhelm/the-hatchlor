@@ -10,4 +10,3 @@ default_context:
     project_repo: "https://github.com/FlorianWilhelm/the-hatchlor-demo"
     pypi_username: "{{ cookiecutter.github_username }}"
     lock_file_support: false
-    

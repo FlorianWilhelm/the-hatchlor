@@ -1,4 +1,4 @@
-{ 
+{
   "full_name": "Florian Wilhelm",
   "email": "email@example.com",
   "project_name": "Python hatch project",
@@ -10,7 +10,7 @@
   "github_username": "{{ cookiecutter.full_name.replace(' ', '')}}",
   "project_repo": "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}",
   "pypi_username": "{{ cookiecutter.github_username }}",
-  "lock_file_support": false,  
+  "lock_file_support": false,
   "__prompts__": {
     "full_name": "Provide your [bold yellow]full name[/]",
     "email": "Provide your [bold yellow]email[/]",
