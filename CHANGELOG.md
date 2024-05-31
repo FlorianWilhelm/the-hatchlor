@@ -8,6 +8,7 @@
 - Chg: Let the `lint` environment not inherit from default to avoid inconsistencies with pre-commit
 - Upd: Bump version of ruff to 0.4.4 and mypy 1.10
 - Chg: Lock file support is no longer experimental
+- Add: Github Actions workflows
 
 ## Version 0.5
 

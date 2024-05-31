@@ -29,6 +29,7 @@ The Hatchlor integrates the following features:
 * [pyproject.toml]: all package, build and tool configuration in one file,
 * [pytest]: full-featured Python testing tool that helps you write better programs,
 * [coverage]: tool for measuring code coverage of Python programs with pytest integration,
+* [GitHub Actions]: workflows with [dependabot], [release-drafter], [labeler], build docs, test & publish to PYPI,
 * [ruff]: extremely fast Python linter/formatter, which replaces [isort], [flake8], [black], etc.,
 * [mypy]: optional static type checker for Python,
 * [mkdocs]: a fast, simple and downright gorgeous static site generator,
@@ -93,6 +94,10 @@ To start this project off a lot of inspiration was taken from [hatch], [cookiecu
 [virtualenv]: https://virtualenv.pypa.io/
 [vanilla Python project]: https://github.com/FlorianWilhelm/the-hatchlor-demo
 [`README.md`]: https://github.com/FlorianWilhelm/the-hatchlor-demo
+[GitHub Actions]: https://docs.github.com/en/actions
+[labeler]: https://github.com/marketplace/actions/github-labeler
+[dependabot]: https://docs.github.com/en/code-security/dependabot
+[release-drafter]: https://github.com/marketplace/actions/release-drafter
 
 [Tests-image]: https://github.com/FlorianWilhelm/the-hatchlor/actions/workflows/run-tests.yml/badge.svg?branch=main
 [Tests-link]: https://github.com/FlorianWilhelm/the-hatchlor/actions/workflows/run-tests.yml
