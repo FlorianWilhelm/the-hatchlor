@@ -9,7 +9,7 @@ jobs:
     strategy:
       matrix:
         os: ["ubuntu-latest"]
-        python_version: ['{{ cookiecutter.python_version }}']
+        python_version: ['{{ cookiecutter.target_python_version }}']
 
     steps:
     - uses: actions/checkout@v4
@@ -48,7 +48,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-version: '{{ cookiecutter.python_version }}'
+        python-version: '{{ cookiecutter.target_python_version }}'
     - name: Install dependencies
       shell: bash
       run: |
