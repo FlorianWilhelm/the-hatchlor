@@ -1,0 +1,41 @@
+name: Tests
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+concurrency:
+ group: {% raw %}${{ github.workflow }}-${{ github.head_ref || github.run_id }}{% endraw %}
+ cancel-in-progress: true
+
+defaults:
+ run:
+   shell: bash
+
+jobs:
+ tests:
+   runs-on: {% raw %} ${{ matrix.os }}{% endraw %}
+
+   strategy:
+     matrix:
+       os: [ubuntu-latest, macos-latest]
+       python-version: ["3.9", "3.10", "3.11"]
+   steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: {% raw %}${{ matrix.python_version }}{% endraw %}
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install hatch pre-commit
+        hatch env create
+    - name: Lint and typecheck
+      run: |
+        hatch run lint:lint-check
+    - name: Run Tests
+      run: |
+        hatch run test:pytest
