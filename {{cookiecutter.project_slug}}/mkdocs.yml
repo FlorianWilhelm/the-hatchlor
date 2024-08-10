@@ -132,9 +132,11 @@ markdown_extensions:
       social_url_shortener: true
       social_url_shorthand: true
       normalize_issue_symbols: true
-      provider: {{ cookiecutter.project_repo.split('/')[2].split('.')[-2] }}
-      user: {{ cookiecutter.project_repo.split('/')[-2] }}
-      repo:  {{ cookiecutter.project_repo.split('/')[-1] }}
+      {% set parts = cookiecutter.project_repo.split('/') -%}
+      {% set domain_parts = parts.split('.') if parts|length > 2 else [] -%}
+      provider: {{ domain_parts[-2] if domain_parts|length > 2 else 'github' }}
+      user: {{ parts[-2] if parts|length > 2 else cookiecutter.github_username }}
+      repo: {{ parts[-1] if parts|length > 2 else cookiecutter.project_slug }}
   - pymdownx.mark:
   - pymdownx.progressbar:
   - pymdownx.saneheaders:
