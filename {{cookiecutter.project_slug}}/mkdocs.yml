@@ -133,7 +133,7 @@ markdown_extensions:
       social_url_shorthand: true
       normalize_issue_symbols: true
       {% set parts = cookiecutter.project_repo.split('/') -%}
-      {% set domain_parts = parts.split('.') if parts|length > 2 else [] -%}
+      {% set domain_parts = parts[-3].split('.') if parts|length > 2 else [] -%}
       provider: {{ domain_parts[-2] if domain_parts|length > 2 else 'github' }}
       user: {{ parts[-2] if parts|length > 2 else cookiecutter.github_username }}
       repo: {{ parts[-1] if parts|length > 2 else cookiecutter.project_slug }}
