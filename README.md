@@ -29,7 +29,7 @@ The Hatchlor integrates the following features:
 * [pyproject.toml]: all package, build and tool configuration in one file,
 * [pytest]: full-featured Python testing tool that helps you write better programs,
 * [coverage]: tool for measuring code coverage of Python programs with pytest integration,
-* [GitHub Actions]: workflows with [dependabot], [release-drafter], [labeler], build docs, test & publish to PYPI,
+* [GitHub Actions]: workflows with [dependabot], [release-drafter], [labeler], build docs, test & publish to PyPI,
 * [ruff]: extremely fast Python linter/formatter, which replaces [isort], [flake8], [black], etc.,
 * [mypy]: optional static type checker for Python,
 * [mkdocs]: a fast, simple and downright gorgeous static site generator,

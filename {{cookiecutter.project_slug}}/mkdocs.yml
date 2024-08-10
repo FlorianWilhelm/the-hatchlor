@@ -132,9 +132,9 @@ markdown_extensions:
       social_url_shortener: true
       social_url_shorthand: true
       normalize_issue_symbols: true
-      provider: github
-      user: pypa
-      repo: hatch
+      provider: {{ cookiecutter.project_repo.split('/')[2].split('.')[-2] }}
+      user: {{ cookiecutter.project_repo.split('/')[-2] }}
+      repo:  {{ cookiecutter.project_repo.split('/')[-1] }}
   - pymdownx.mark:
   - pymdownx.progressbar:
   - pymdownx.saneheaders:
