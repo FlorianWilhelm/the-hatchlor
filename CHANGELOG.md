@@ -1,5 +1,11 @@
 # Changelog
 
+## Version 0.7
+
+- Add: Let `git` set remote to the project repository during setup
+- Fix: Setting `pymdownx.magiclink` in `mkdocs` correctly.
+- Upd: Updated dependencies of environemnts
+
 ## Version 0.6
 
 - Fix: `PIP_COMPILE_UPGRADE_PACKAGE` instead of `PIP_COMPILE_UPGRADE` in `upgrade-pkg` hatch command
