@@ -14,8 +14,25 @@ end_of_line = lf
 indent_style = tab
 end_of_line = crlf
 
+[*.{,ba,z}sh]
+indent_size = 2
+tab_width = 2
+
 [LICENSE.txt]
 insert_final_newline = false
 
 [Makefile]
 indent_style = tab
+
+[*.json*]
+indent_size = 2
+
+[*.{markdown,md}]
+trim_trailing_whitespace = false
+
+*.xml]
+indent_size = 2
+insert_final_newline = false
+
+[*.y{a,}ml]
+indent_size = 2
