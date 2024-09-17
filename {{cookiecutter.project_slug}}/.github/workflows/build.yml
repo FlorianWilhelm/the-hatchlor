@@ -24,7 +24,7 @@ jobs:
         hatch env create
     - name: Lint and typecheck
       run: |
-        hatch run lint:lint-check
+        hatch run lint:all
     - name: Run Tests
       run: |
         hatch run test:pytest
