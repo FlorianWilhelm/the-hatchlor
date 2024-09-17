@@ -96,7 +96,7 @@ This often provides additional considerations and avoids unnecessary work.
 1. Create a branch to hold your changes:
 
    ```console
-   git checkout -b my-feature
+   git switch --create my-feature
    ```
 
    and start making changes. Never work on the main branch!
@@ -140,7 +140,7 @@ This often provides additional considerations and avoids unnecessary work.
 1. If everything works fine, push your local branch to the remote server with:
 
    ```console
-   git push -u origin my-feature
+   git push --set-upstream origin my-feature
    ```
 
 2. Go to the web page of your fork and click "Create pull request"

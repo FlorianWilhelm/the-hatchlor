@@ -15,7 +15,7 @@
     "full_name": "Provide your [bold yellow]full name[/]",
     "email": "Provide your [bold yellow]email[/]",
     "target_python_version": "Provide the [bold yellow]minimum Python version[/]",
-    "project_name": "Provide the [bold yellow]human-readible project name[/]",
+    "project_name": "Provide the [bold yellow]human-readable project name[/]",
     "project_slug": "Provide the [bold yellow]project slug[/] (only ASCII letters/digits, underscores, hyphens, and periods)",
     "pkg_name": "Provide the [bold yellow]package name[/] (only ASCII letters/digits, and underscores)",
     "project_repo": "Optionally, provide the [bold yellow]repository url[/]",
