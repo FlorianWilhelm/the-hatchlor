@@ -2,12 +2,16 @@
 
 ## Version 0.7
 
-- Add: Let `git` set remote to the project repository during setup
-- Fix: Setting `pymdownx.magiclink` in `mkdocs` correctly.
-- Upd: Updated dependencies of environemnts
+- Fix: Linter commands in Github workflows
+- Fix: Missing .linkcheckerrc in docs validation
+- Add: Empty root commit
+- New: Minor improvements of Git and Editorconfig settings
 
 ## Version 0.6
 
+- Add: Let `git` set remote to the project repository during setup
+- Fix: Setting `pymdownx.magiclink` in `mkdocs` correctly.
+- Upd: Updated dependencies of environemnts
 - Fix: `PIP_COMPILE_UPGRADE_PACKAGE` instead of `PIP_COMPILE_UPGRADE` in `upgrade-pkg` hatch command
 - Chg: Set `pip-compile-hashes = false` in `pyproject.toml`
 - Chg: Add `"Programming Language :: Python :: 3.12"`
