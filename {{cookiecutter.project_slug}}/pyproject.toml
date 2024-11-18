@@ -130,7 +130,7 @@ exclude_lines = [
 ]
 
 [tool.ruff]
-target-version = "{{ 'py' ~ cookiecutter.target_python_version.replace('.', '') }}" # ToDo: Modify according to your needs!
+# ruff will use `requires-python` as `target-version` by default
 line-length = 120
 indent-width = 4
 include = [
