@@ -327,6 +327,6 @@ all = [
 ]
 
 # Test matrix for various Python versions replacing the functionality of tox
-[[tool.hatch.envs.py-test.matrix]]
+[[tool.hatch.envs.test.matrix]]
 template = ["test"]
 python = ["310", "311", "312"]
