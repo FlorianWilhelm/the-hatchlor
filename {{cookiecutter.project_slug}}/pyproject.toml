@@ -2,6 +2,7 @@
 requires = ["hatchling", "hatch-vcs"]
 build-backend = "hatchling.build"
 
+
 ####################
 # Project Metadata #
 ####################
@@ -57,6 +58,7 @@ Documentation = "{{ cookiecutter.project_repo }}"
 Source = "{{ cookiecutter.project_repo }}"
 Tracker = "{{ cookiecutter.project_repo }}/issues"
 Sponsor = "https://github.com/sponsors/{{ cookiecutter.github_username }}"
+
 
 ######################
 # Build & Versioning #
@@ -142,10 +144,10 @@ mask_initial_release = true
 [tool.semantic_release.changelog.environment]
 block_start_string = "{% raw %}{%{% endraw %}"
 block_end_string = "{% raw %}%}{% endraw %}"
-variable_start_string = "{{"
-variable_end_string = "}}"
-comment_start_string = "{#"
-comment_end_string = "#}"
+variable_start_string = "{% raw %}{{{% endraw %}"
+variable_end_string = "{% raw %}}}{% endraw %}"
+comment_start_string = "{% raw %}{#{% endraw %}"
+comment_end_string = "{% raw %}#}{% endraw %}"
 trim_blocks = false
 lstrip_blocks = false
 newline_sequence = "\n"
