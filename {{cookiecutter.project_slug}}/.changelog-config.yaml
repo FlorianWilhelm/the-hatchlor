@@ -9,7 +9,7 @@ variables:
 starting_tag_pipeline:
   - action: ReadFile
     kwargs:
-      filename: '{% raw %}{{ changelog_filename }}{% raw %}'
+      filename: '{% raw %}{{ changelog_filename }}{% endraw %}'
   - action: FirstRegExMatch
     kwargs:
       pattern: (?im)^## (?P<rev>\d+\.\d+(?:\.\d+)?)\s+\(\d+-\d{2}-\d{2}\)$
@@ -42,7 +42,7 @@ body_pipeline:
 output_pipeline:
   - action: IncrementalFileInsert
     kwargs:
-      filename: '{% raw %}{{ changelog_filename }}{% raw %}'
+      filename: '{% raw %}{{ changelog_filename }}{% endraw %}'
       last_heading_pattern: (?im)^## \d+\.\d+(?:\.\d+)?\s+\([0-9]+-[0-9]{2}-[0-9]{2}\)$
 
 # Group the commits within a version by these commit attributes.
