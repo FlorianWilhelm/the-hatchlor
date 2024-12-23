@@ -148,4 +148,4 @@ jobs:
         run: >-
           gh release upload
           '${{ github.ref_name }}' dist/**
-          --repo '{% raw %}${{ github.repository }}{% raw %}'
+          --repo '{% raw %}${{ github.repository }}{% endraw %}'
